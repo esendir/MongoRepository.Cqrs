@@ -72,6 +72,14 @@ namespace Repository.Mongo.Cqrs
         /// <summary>
         /// update an entity with updated fields
         /// </summary>
+        /// <param name="id">id</param>
+        /// <param name="update">updated field(s)</param>
+        /// <returns>true if successful, otherwise false</returns>
+        bool Update(string id, UpdateDefinition<T> update);
+
+        /// <summary>
+        /// update an entity with updated fields
+        /// </summary>
         /// <param name="entity">entity</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
@@ -84,6 +92,14 @@ namespace Repository.Mongo.Cqrs
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
         bool Update(FilterDefinition<T> filter, UpdateDefinition<T> update);
+
+        /// <summary>
+        /// update found entities by filter with updated fields
+        /// </summary>
+        /// <param name="filter">collection filter</param>
+        /// <param name="update">updated field(s)</param>
+        /// <returns>true if successful, otherwise false</returns>
+        bool Update(Expression<Func<T, bool>> filter, UpdateDefinition<T> update);
 
         /// <summary>
         /// update a property field in an entity

@@ -126,6 +126,28 @@ namespace Repository.Mongo.Cqrs
         }
 
         /// <summary>
+        /// update found entities by filter with updated fields
+        /// </summary>
+        /// <param name="filter">collection filter</param>
+        /// <param name="update">updated field(s)</param>
+        /// <returns>true if successful, otherwise false</returns>
+        public bool Update(Expression<Func<T, bool>> filter, UpdateDefinition<T> update)
+        {
+            return Repository.Update(filter, update);
+        }
+
+        /// <summary>
+        /// update an entity with updated fields
+        /// </summary>
+        /// <param name="id">id</param>
+        /// <param name="update">updated field(s)</param>
+        /// <returns>true if successful, otherwise false</returns>
+        public bool Update(string id, UpdateDefinition<T> update)
+        {
+            return Repository.Update(id, update);
+        }
+
+        /// <summary>
         /// update an entity with updated fields
         /// </summary>
         /// <param name="entity">entity</param>

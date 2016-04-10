@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0-*",
+  "version": "1.0.0-rc2",
   "description": "Repository.Mongo.Cqrs Class Library",
   "authors": [ "usame_ozu74t3" ],
   "tags": [ "mongo", "repository", "cqrs" ],
@@ -10,6 +10,6 @@
     "net46": { }
   },
   "dependencies": {
-    "Repository.Mongo": "1.0.2"
+    "Repository.Mongo": "1.0.2-rc3"
   }
 }

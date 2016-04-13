@@ -64,6 +64,40 @@ namespace Repository.Mongo.Cqrs
         IEnumerable<T> Find(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order, int pageIndex, int size, bool isDescending);
 
         /// <summary>
+        /// fetch all items in collection
+        /// </summary>
+        /// <returns>collection of entity</returns>
+        IEnumerable<T> FindAll();
+
+        /// <summary>
+        /// fetch all items in collection with paging
+        /// </summary>
+        /// <param name="pageIndex">page index, based on 0</param>
+        /// <param name="size">number of items in page</param>
+        /// <returns>collection of entity</returns>
+        IEnumerable<T> FindAll(int pageIndex, int size);
+
+        /// <summary>
+        /// fetch all items in collection with paging and ordering
+        /// default ordering is descending
+        /// </summary>
+        /// <param name="order">ordering parameters</param>
+        /// <param name="pageIndex">page index, based on 0</param>
+        /// <param name="size">number of items in page</param>
+        /// <returns>collection of entity</returns>
+        IEnumerable<T> FindAll(Expression<Func<T, object>> order, int pageIndex, int size);
+
+        /// <summary>
+        /// fetch all items in collection with paging and ordering in direction
+        /// </summary>
+        /// <param name="order">ordering parameters</param>
+        /// <param name="pageIndex">page index, based on 0</param>
+        /// <param name="size">number of items in page</param>
+        /// <param name="isDescending">ordering direction</param>
+        /// <returns>collection of entity</returns>
+        IEnumerable<T> FindAll(Expression<Func<T, object>> order, int pageIndex, int size, bool isDescending);
+
+        /// <summary>
         /// get by id
         /// </summary>
         /// <param name="id">id value</param>

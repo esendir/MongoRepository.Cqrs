@@ -1,11 +1,11 @@
 {
-  "version": "1.0.0-rc3",
-  "description": "Repository.Mongo.Cqrs Class Library",
+  "version": "1.0.0-rc4",
+  "description": "CQRS pattern based on repository pattern of MongoDB",
   "authors": [ "UsameEsendir" ],
   "tags": [ "mongo", "repository", "cqrs" ],
   "projectUrl": "https://github.com/esendir/MongoRepository.Cqrs",
   "summary": "This package contains base implementations for CQRS pattern on Repository.Mongo package. It is also possible to use Repository.Mongo.Cached package.",
-  "releaseNotes": "First release",
+  "releaseNotes": "packages updated",
   "frameworks": {
     "net46": { }
   },

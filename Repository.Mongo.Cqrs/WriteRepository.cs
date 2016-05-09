@@ -120,7 +120,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="filter">collection filter</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        public bool Update(FilterDefinition<T> filter, UpdateDefinition<T> update)
+        public bool Update(FilterDefinition<T> filter, params UpdateDefinition<T>[] update)
         {
             return Repository.Update(filter, update);
         }
@@ -131,7 +131,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="filter">collection filter</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        public bool Update(Expression<Func<T, bool>> filter, UpdateDefinition<T> update)
+        public bool Update(Expression<Func<T, bool>> filter, params UpdateDefinition<T>[] update)
         {
             return Repository.Update(filter, update);
         }
@@ -142,7 +142,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="id">id</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        public bool Update(string id, UpdateDefinition<T> update)
+        public bool Update(string id, params UpdateDefinition<T>[] update)
         {
             return Repository.Update(id, update);
         }
@@ -153,7 +153,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="entity">entity</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        public bool Update(T entity, UpdateDefinition<T> update)
+        public bool Update(T entity, params UpdateDefinition<T>[] update)
         {
             return Repository.Update(entity, update);
         }

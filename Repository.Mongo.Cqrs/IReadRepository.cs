@@ -26,6 +26,8 @@ namespace Repository.Mongo.Cqrs
 
         #region CRUD
 
+        #region Find
+
         /// <summary>
         /// find entities
         /// </summary>
@@ -63,6 +65,10 @@ namespace Repository.Mongo.Cqrs
         /// <returns>collection of entity</returns>
         IEnumerable<T> Find(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order, int pageIndex, int size, bool isDescending);
 
+        #endregion Find
+
+        #region FindAll
+
         /// <summary>
         /// fetch all items in collection
         /// </summary>
@@ -97,12 +103,86 @@ namespace Repository.Mongo.Cqrs
         /// <returns>collection of entity</returns>
         IEnumerable<T> FindAll(Expression<Func<T, object>> order, int pageIndex, int size, bool isDescending);
 
+        #endregion FindAll
+
+        #region First
+
+        /// <summary>
+        /// get first item in collection
+        /// </summary>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T First();
+
+        /// <summary>
+        /// get first item in query
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T First(Expression<Func<T, bool>> filter);
+
+        /// <summary>
+        /// get first item in query with order
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T First(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order);
+
+        /// <summary>
+        /// get first item in query with order and direction
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <param name="isDescending">ordering direction</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T First(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order, bool isDescending);
+
+        #endregion First
+
+        #region Get
+
         /// <summary>
         /// get by id
         /// </summary>
         /// <param name="id">id value</param>
         /// <returns>entity of <typeparamref name="T"/></returns>
         T Get(string id);
+
+        #endregion Get
+
+        #region Last
+
+        /// <summary>
+        /// get last item in collection
+        /// </summary>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T Last();
+
+        /// <summary>
+        /// get last item in query
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T Last(Expression<Func<T, bool>> filter);
+
+        /// <summary>
+        /// get last item in query with order
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T Last(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order);
+
+        /// <summary>
+        /// get last item in query with order and direction
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <param name="isDescending">ordering direction</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        T Last(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order, bool isDescending);
+
+        #endregion Last
 
         #endregion CRUD
 

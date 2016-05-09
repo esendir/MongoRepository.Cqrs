@@ -54,6 +54,8 @@ namespace Repository.Mongo.Cqrs
 
         #region CRUD
 
+        #region Find
+
         /// <summary>
         /// find entities
         /// </summary>
@@ -103,6 +105,10 @@ namespace Repository.Mongo.Cqrs
             return Repository.Find(filter, order, pageIndex, size, isDescending);
         }
 
+        #endregion Find
+
+        #region FindAll
+
         /// <summary>
         /// fetch all items in collection
         /// </summary>
@@ -149,6 +155,56 @@ namespace Repository.Mongo.Cqrs
             return Repository.FindAll(order, pageIndex, size, isDescending);
         }
 
+        #endregion FindAll
+
+        #region First
+
+        /// <summary>
+        /// get first item in collection
+        /// </summary>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T First()
+        {
+            return Repository.First();
+        }
+
+        /// <summary>
+        /// get first item in query
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T First(Expression<Func<T, bool>> filter)
+        {
+            return Repository.First(filter);
+        }
+
+        /// <summary>
+        /// get first item in query with order
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T First(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order)
+        {
+            return Repository.First(filter, order);
+        }
+
+        /// <summary>
+        /// get first item in query with order and direction
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <param name="isDescending">ordering direction</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T First(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order, bool isDescending)
+        {
+            return Repository.First(filter, order, isDescending);
+        }
+
+        #endregion First
+
+        #region Get
+
         /// <summary>
         /// get by id
         /// </summary>
@@ -158,6 +214,54 @@ namespace Repository.Mongo.Cqrs
         {
             return Repository.Get(id);
         }
+
+        #endregion Get
+
+        #region Last
+
+        /// <summary>
+        /// get last item in collection
+        /// </summary>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T Last()
+        {
+            return Repository.Last();
+        }
+
+        /// <summary>
+        /// get last item in query
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T Last(Expression<Func<T, bool>> filter)
+        {
+            return Repository.Last(filter);
+        }
+
+        /// <summary>
+        /// get last item in query with order
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T Last(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order)
+        {
+            return Repository.Last(filter, order);
+        }
+
+        /// <summary>
+        /// get first last in query with order and direction
+        /// </summary>
+        /// <param name="filter">expression filter</param>
+        /// <param name="order">ordering parameters</param>
+        /// <param name="isDescending">ordering direction</param>
+        /// <returns>entity of <typeparamref name="T"/></returns>
+        public T Last(Expression<Func<T, bool>> filter, Expression<Func<T, object>> order, bool isDescending)
+        {
+            return Repository.Last(filter, order, isDescending);
+        }
+
+        #endregion Last
 
         #endregion CRUD
 

@@ -1,15 +1,20 @@
 {
-  "version": "1.0.0-rc5",
-  "description": "CQRS pattern based on repository pattern of MongoDB",
+  "version": "1.0.0",
+  "description": "This package contains base implementations for CQRS pattern on Repository.Mongo package. It is also possible to use Repository.Mongo.Cached package",
   "authors": [ "UsameEsendir" ],
-  "tags": [ "mongo", "repository", "cqrs" ],
-  "projectUrl": "https://github.com/esendir/MongoRepository.Cqrs",
-  "summary": "This package contains base implementations for CQRS pattern on Repository.Mongo package. It is also possible to use Repository.Mongo.Cached package.",
-  "releaseNotes": "packages updated",
+  "packOptions": {
+    "tags": [ "mongo", "repository", "cqrs" ],
+    "projectUrl": "https://github.com/esendir/MongoRepository.Cqrs",
+    "summary": "CQRS pattern based on repository pattern of MongoDB",
+    "releaseNotes": "packages updated"
+  },
   "frameworks": {
     "net46": { }
   },
   "dependencies": {
-    "Repository.Mongo": "1.0.2-rc8"
+    "Repository.Mongo": "1.0.2"
+  },
+  "buildOptions": {
+    "xmlDoc": true
   }
 }

@@ -75,7 +75,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="id">id</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        bool Update(string id, UpdateDefinition<T> update);
+        bool Update(string id, params UpdateDefinition<T>[] update);
 
         /// <summary>
         /// update an entity with updated fields
@@ -83,7 +83,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="entity">entity</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        bool Update(T entity, UpdateDefinition<T> update);
+        bool Update(T entity, params UpdateDefinition<T>[] update);
 
         /// <summary>
         /// update found entities by filter with updated fields
@@ -91,7 +91,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="filter">collection filter</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        bool Update(FilterDefinition<T> filter, UpdateDefinition<T> update);
+        bool Update(FilterDefinition<T> filter, params UpdateDefinition<T>[] update);
 
         /// <summary>
         /// update found entities by filter with updated fields
@@ -99,7 +99,7 @@ namespace Repository.Mongo.Cqrs
         /// <param name="filter">collection filter</param>
         /// <param name="update">updated field(s)</param>
         /// <returns>true if successful, otherwise false</returns>
-        bool Update(Expression<Func<T, bool>> filter, UpdateDefinition<T> update);
+        bool Update(Expression<Func<T, bool>> filter, params UpdateDefinition<T>[] update);
 
         /// <summary>
         /// update a property field in an entity

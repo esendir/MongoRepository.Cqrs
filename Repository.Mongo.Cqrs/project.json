@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "This package contains base implementations for CQRS pattern on Repository.Mongo package. It is also possible to use Repository.Mongo.Cached package",
   "authors": [ "UsameEsendir" ],
   "packOptions": {
@@ -12,7 +12,7 @@
     "net46": { }
   },
   "dependencies": {
-    "Repository.Mongo": "1.0.2"
+    "Repository.Mongo": "1.0.4"
   },
   "buildOptions": {
     "xmlDoc": true
